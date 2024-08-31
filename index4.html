@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit or Loss Calculator</title>
+</head>
+
+<body>
+    <script>
+       
+        const costPrice = parseFloat(prompt("Enter cost price:"));
+        const sellingPrice = parseFloat(prompt("Enter selling price:"));
+
+      
+        if (isNaN(costPrice) || isNaN(sellingPrice)) {
+            console.log("Invalid input. Please enter numerical values.");
+        } else {
+            
+            const difference = sellingPrice - costPrice;
+
+           
+            switch (true) {
+                case (difference > 0):
+                    console.log(`Profit: ${difference.toFixed(2)}`);
+                    break;
+                case (difference < 0):
+                    console.log(`Loss: ${Math.abs(difference).toFixed(2)}`);
+                    break;
+                case (difference == 0):
+                    console.log("No profit, no loss.");
+                    break;
+                default:
+                    console.log("Unexpected case.");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
